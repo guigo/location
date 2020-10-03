@@ -1,0 +1,23 @@
+.logo-name{
+  color: $primary;
+  font-size: 42px;
+  padding: 8px;
+  font-family: $family-primary;
+}
+
+
+.bg-item-1{
+  background: image-url('background/bg2.jpg') no-repeat center center transparent;
+  background-size: cover;
+  height: 50vh;
+  max-height: 100vh;
+  font-family: $family-primary !important;
+  .title{
+    color: $primary;   
+    font-size: 48px;
+    text-transform: uppercase;
+  }
+  .subtitle{
+    color: $primary;     
+  }
+}

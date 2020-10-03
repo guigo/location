@@ -843,6 +843,11 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
+"@fortawesome/fontawesome-free@^5.8.1":
+  version "5.15.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.15.0.tgz#631b04d6301fee06d4bd7a9824fe7157735cbdb6"
+  integrity sha512-wXetjQBNMTP59MAYNR1tdahMDOLx3FYj3PKdso7PLFLDpTvmAIqhSSEqnSTmWKahRjD+Sh5I5635+5qaoib5lw==
+
 "@npmcli/move-file@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@npmcli/move-file/-/move-file-1.0.1.tgz#de103070dac0f48ce49cf6693c23af59c0f70464"
@@ -1639,6 +1644,26 @@ builtin-status-codes@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
   integrity sha1-hZgoeOIbmOHGZCXgPQF0eI9Wnug=
+
+bulma-accordion@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/bulma-accordion/-/bulma-accordion-2.0.1.tgz#5493c51dd7c5926ae47115da3efe858cfb115474"
+  integrity sha512-qqLN67Y60c0adHAVvQmJTr6rhg0FWUCWbswFaW/3+offjc6ujqrUoIdlzX1avni4d/aJEl7j9PckfRGmIJcxxQ==
+
+bulma-pageloader@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/bulma-pageloader/-/bulma-pageloader-0.3.0.tgz#94a4ff7d9129cbe01dbc5cae4e64508e13563cf1"
+  integrity sha512-lbahiqhBCov5AYdziHFnC5/JOhCrJWFTpdRiAkwW49IM/mf0whCWHVe8MuejZFu2PEs1mtH8Gnz8exEks4Q+7g==
+
+bulma-start@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/bulma-start/-/bulma-start-0.0.4.tgz#19a0783cd8f55d8f5b3d771c984ab56f72e75cb7"
+  integrity sha512-/PbhZBs1tIqnU75eh1SVWKC2DeW+xtQaaKITRksvmlCSTp8BH88JJk+gML3XCGE2LhSWyHTT+AIh6mwtUyjlxQ==
+
+bulma@0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/bulma/-/bulma-0.7.2.tgz#8e944377b74c7926558830d38d8e19eaf49f5fb6"
+  integrity sha512-6JHEu8U/1xsyOst/El5ImLcZIiE2JFXgvrz8GGWbnDLwTNRPJzdAM0aoUM1Ns0avALcVb6KZz9NhzmU53dGDcQ==
 
 bytes@3.0.0:
   version "3.0.0"
@@ -4016,6 +4041,11 @@ jest-worker@^25.4.0:
   dependencies:
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
+
+jquery@>=1.12.0, jquery@^3.3.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.5.1.tgz#d7b4d08e1bfdb86ad2f1a3d039ea17304717abb5"
+  integrity sha512-XwIBPqcMn57FxfT+Go5pzySnm4KWkT1Tv7gjrpT1srtf8Weynl6R273VJ5GjkRb51IzMp5nbaPjJXMWeju2MKg==
 
 js-base64@^2.1.8:
   version "2.6.4"
@@ -7094,6 +7124,13 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     extend-shallow "^3.0.2"
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
+
+toastr@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/toastr/-/toastr-2.1.4.tgz#8b43be64fb9d0c414871446f2db8e8ca4e95f181"
+  integrity sha1-i0O+ZPudDEFIcURvLbjoyk6V8YE=
+  dependencies:
+    jquery ">=1.12.0"
 
 toidentifier@1.0.0:
   version "1.0.0"
