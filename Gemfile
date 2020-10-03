@@ -43,6 +43,8 @@ group :development do
   gem 'rspec-rails', '~> 3.7'
   # Strategies for cleaning databases in Ruby. Can be used to ensure a clean state for testing. http://databasecleaner.github.io
   gem 'database_cleaner'
+  # Factory Bot ♥ Rails https://thoughtbot.com/services/ruby-…
+  gem "factory_bot_rails", "~> 4.0"
 end
 
 group :test do
