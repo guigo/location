@@ -7,10 +7,10 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'auth', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <div class="content" id="main">    
+    <div class="content" id="main">      <%= render 'layouts/partials/topbar' %>      
       <div class="container is-fluid is-marginless">    
         <%= yield %>
       </div>        

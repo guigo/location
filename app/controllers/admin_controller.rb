@@ -5,7 +5,7 @@ class AdminController < ActionController::Base
 
   private
 
-  def define_layout
+  def define_layout    
     devise_controller? ? 'auth' : 'admin'
   end
 end
