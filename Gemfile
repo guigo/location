@@ -31,6 +31,17 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 3.7'
+  # Strategies for cleaning databases in Ruby. Can be used to ensure a clean state for testing. http://databasecleaner.github.io
+  gem 'database_cleaner'
+  # Factory Bot ♥ Rails https://thoughtbot.com/services/ruby-…
+  gem "factory_bot_rails", "~> 4.0"
+  # Avoid repeating yourself, use pry-rails instead of copying the initializer to every rails project. This is a small gem which causes rails console to open pry. It therefore depends on pry.
+  gem 'pry-rails'
+  # Collection of testing matchers extracted from Shoulda http://matchers.shoulda.io
+  gem 'shoulda-matchers'
+  # A library for generating fake data such as names, addresses, and phone numbers.
+  gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
 end
 
 group :development do
@@ -39,7 +50,7 @@ group :development do
   gem 'listen', '~> 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-watcher-listen', '~> 2.0.0'  
 end
 
 group :test do
