@@ -1,0 +1,33 @@
+<div>
+  <h2>CADASTRA-SE</h2>
+</div>
+<br>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="field">
+    <%= f.text_field :name, class: "input", placeholder: "Nome", autofocus: true, autocomplete: "name"  %>
+  </div>
+
+  <div class="field">
+    <%= f.email_field :email, class: "input", placeholder: "Email", autofocus: true, autocomplete: "email"  %>
+  </div>
+
+  <div class="field">
+
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> caracter no minimo)</em>
+    <% end %><br />
+    <%= f.password_field :password,  class: "input", placeholder: "Senha", autofocus: true, autocomplete: "password"  %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password_confirmation,  class: "input", placeholder: "confirme a Senha", autofocus: true, autocomplete: "new-password"  %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Cadastrar", class: "button is-fullwidth is-medium is-primary" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

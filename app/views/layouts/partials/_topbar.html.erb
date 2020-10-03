@@ -1,0 +1,21 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">   
+    <span class="logo-name">Loca.Ai</span>
+  </div>
+  <div class="navbar-end">
+    <div class="navbar-item">
+      <div class="buttons">   
+        <% if current_user %>  
+          <%= link_to 'Sair', destroy_user_session_path, method: :destroy, class: 'button' %>    
+        <% else%>    
+          <a href="/cadastrar" class="button is-primary">
+          Cadastrar
+          </a>
+          <a href="/entrar" class="button">
+            Entrar
+          </a>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</nav>
