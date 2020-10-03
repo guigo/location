@@ -45,6 +45,10 @@ group :development do
   gem 'database_cleaner'
   # Factory Bot ♥ Rails https://thoughtbot.com/services/ruby-…
   gem "factory_bot_rails", "~> 4.0"
+  # Avoid repeating yourself, use pry-rails instead of copying the initializer to every rails project. This is a small gem which causes rails console to open pry. It therefore depends on pry.
+  gem 'pry-rails'
+  # Collection of testing matchers extracted from Shoulda http://matchers.shoulda.io
+  gem 'shoulda-matchers'
 end
 
 group :test do
