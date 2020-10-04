@@ -8,12 +8,28 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>    
   </head>
   <body>
-    <div class="content" id="main">      <%= render 'layouts/partials/topbar' %>      
-      <div class="container is-fluid is-marginless">    
-        <%= yield %>
-      </div>        
+    <div class="container is-fluid is-marginless">
+      <%= render 'layouts/partials/sidemenu' %>
+
+      <div class="content" id="dash">     
+        <div class="pageloader">
+          <span class="title">Processando</span>
+        </div>
+        <%= render 'layouts/partials/topbar' %>     
+        <div class="yield">
+          <div class="container is-fluid">
+            <% flash.each do |type, message| %>
+              <div class="notification <%= flash_style(type) %>">
+                <%= message %>
+              </div>
+            <% end %>   
+            <%= yield %>          
+          </div>  
+        </div>
+      </div>
     </div>
   </body>
 </html>

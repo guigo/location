@@ -1,29 +1,50 @@
-<p id="notice"><%= notice %></p>
+<%= content_for(:page){ "Usuários" } %>
 
-<h1>Users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Role</th>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.role %></td>
-        <td><%= user.name %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<%= content_for(:top_actions) do %>
+  <div class="navbar-item">
+    <div class="control has-icons-right is-search">
+      <input class="input reset" name="query" type="text" placeholder="Buscar Usuário...">
+      <span class="icon is-small is-right">
+        <i class="material-icons">search</i>
+      </span>
+    </div>
+  </div>
+  <div class="navbar-item">
+    <%= link_to new_admin_user_path, class: 'button is-primary' do %>
+      <span class="icon">
+        <i class="material-icons">add_box</i>
+      </span>
+      <span>Adicionar Usuário</span>
     <% end %>
-  </tbody>
-</table>
+  </div>
+<% end %>
+<br />
+<% @users.each do |user| %>
+  <div class="card card-info">
+    <div class="card-content">
+      <div class="columns">
+        <div class="column">
+          <div class="avatar"></div>
+          <div class="name">
+            <h4>
+              <%= user.name %><br />
+              <small><%= t(user.role) %></small>
+            </h4>
+          </div>
+        </div>    
+        <div class="column">
+          <span class="truncate is-flex">
+            <i class="material-icons">email</i> <span><%= truncate(user.email, length: 40) %></span>
+          </span>
+        </div>
 
-<br>
+        <div class="column is-one-quarter-tablet">
+          <%= link_to 'Ver Usuário', edit_admin_user_path(user), class: "button is-primary is-outlined is-fullwidth is-small" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
 
-<%= link_to 'New User', new_user_path %>
+<%= paginate @users,  outer_window: 3  %>
+<%= page_entries_info @users %>

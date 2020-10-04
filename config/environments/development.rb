@@ -36,8 +36,8 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
-    :user_name => "rvW5Kj03SJavC1hx8EB8Bw",
-    :password => "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",
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
     :domain => 'loca.ai',
     :address => 'smtp.sendgrid.net',
     :port => 587,

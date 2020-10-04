@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-
+  enum status: { 'active' => 0, 'blocked' => 1 }
   enum role: { 'admin' => 0, 'regular' => 1 }
 
   devise :database_authenticatable, :registerable,
@@ -7,9 +7,11 @@ class User < ApplicationRecord
   
   validates :name, presence: true
 
-  after_create :send_welcome_mail
+  # after_create :send_welcome_mail
 
   attribute :role, :integer, default: 1
+  	
+  has_one_attached :avatar
 
   def admin?
     role == 'admin'

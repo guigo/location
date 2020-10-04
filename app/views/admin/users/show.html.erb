@@ -1,14 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Role:</strong>
-  <%= @user.role %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= content_for(:page){ "Edição de Usuário" } %>
+<br />
+<div class="columns is-centered resource">
+  <div class="column">
+    <div class="card">
+      <div class="card-content is-3">
+        <%= render 'form', user: @user %>
+      </div>
+    </div>
+  </div>
+</div>
