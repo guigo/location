@@ -5,12 +5,13 @@ Rails.application.routes.draw do
   namespace :admin do
    resources :cars
    resources :users
+   post :get_car_models, to: 'cars#get_car_models'
   end
   
   namespace :portal do
     resources :main
-    post :reserved_cars, to: 'mains#reserved_cars'   
+    post :reserved_cars, to: 'mains#reserved_cars'    
   end
-
+ 
   root to: 'portal/main#index'
 end

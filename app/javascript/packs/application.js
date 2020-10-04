@@ -42,5 +42,27 @@ $(document).on("turbolinks:load", function() {
     };
     r.readAsDataURL(this.files[0]);
   });
-  
+
+ $('#car_brand').on('change', function(){
+  var brand = $(this).val();
+  console.log(brand);  
+
+  $.ajax({
+    url: "/admin/get_car_models",
+    method: "POST",  
+    dataType: "json",
+    data: {brand: brand},
+    success: function (response) {
+        console.log(response);  
+        var models = response;     
+        $("#car_model").empty();
+        for(var i = 0; i < models.length; i++){
+          $("#car_model").append('<option value="' + models[i]["id"] + '">' + models[i]["name"] + '</option>');
+        }
+    },
+    error: function (xhr, status, error) {
+      console.error('AJAX Error: ' + status + error);
+    },
+  });
+ })
 })
