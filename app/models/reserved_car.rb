@@ -1,0 +1,2 @@
+class ReservedCar < ApplicationRecord
+end

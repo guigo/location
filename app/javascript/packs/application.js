@@ -12,9 +12,22 @@ require("@rails/activestorage").start()
 require("channels")
 require("jquery");
 require("jquery-ui");
+require("jquery-mask-plugin/dist/jquery.mask.js")
 require("bulma-pageloader")
 
+import IMask from 'imask';
+
 $(document).on("turbolinks:load", function() {
+
+  [...document.getElementsByClassName("is-document")].forEach(function(el) {
+    console.log("aqui")
+    IMask(el, { mask: "000.000.000-00" });
+  });    
+  
+  [...document.getElementsByClassName("is-phone")].forEach(function(el) {
+    IMask(el, { mask: "(00) 00000-0000" });
+  });
+  
 
   $('.pageloader').addClass('is-active');
   setTimeout(function(){
