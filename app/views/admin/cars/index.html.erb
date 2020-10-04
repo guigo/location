@@ -2,14 +2,6 @@
 
 <%= content_for(:top_actions) do %>
   <div class="navbar-item">
-    <div class="control has-icons-right is-search">
-      <input class="input reset" name="query" type="text" placeholder="Buscar Carro...">
-      <span class="icon is-small is-right">
-        <i class="material-icons">search</i>
-      </span>
-    </div>
-  </div>
-  <div class="navbar-item">
     <%= link_to new_admin_car_path, class: 'button is-primary' do %>
       <span class="icon">
         <i class="material-icons">add_box</i>

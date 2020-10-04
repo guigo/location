@@ -35,6 +35,8 @@
           <% if current_user %>
             <div class="card-content">
               <%= form_for([:portal, @reserved_car]) do |form| %>
+                <%= form.hidden_field :user_id, :value => current_user.id %>
+                <%= form.hidden_field :car_id, :value => @car.id %>
                 <%= form.text_field :document, autofocus: true, autocomplete: "CPF", class: "input is-document", placeholder:"CPF", value: current_user.document %>
                   <div class="column">
                     <%= form.submit 'Reservar', class: 'button is-primary is-fullwidth' %>

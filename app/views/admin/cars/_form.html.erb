@@ -36,14 +36,18 @@
       <div class="field column">
         <%= form.label :brand, class: 'label' %>
         <div class="control">
-          <%= form.text_field :brand, class: 'input', autocomplete: "off",required: true %>
+           <div class="select is-fullwidth">
+            <%= form.select :brand, @brands.collect{|brand| [brand.name, brand.name]}, onChange: "loadCarModel();" %>    
+          </div> 
         </div>
       </div>
 
       <div class="field column">
         <%= form.label :model, class: 'label' %>
         <div class="control">
-          <%= form.text_field :model, class: 'input', autocomplete: "off", required: true %>
+          <div class="select is-fullwidth">
+            <%= form.select :model, @models.collect{|model| [model.name, model.name]} %>    
+          </div>   
         </div>
       </div>   
     </div>

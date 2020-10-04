@@ -1,5 +1,7 @@
+# frozen_string_literal: true
 class Admin::CarsController < AdminController
   before_action :set_car, only: [:show, :edit, :update, :destroy]  
+  before_action :set_car_brands, only: [:show, :edit, :new]
 
   def index
     @cars = Car.all.page(params[:page]).per(8) 
@@ -46,7 +48,29 @@ class Admin::CarsController < AdminController
     end
   end
 
+  def get_car_models    
+    vehicles =  FipeApi::Vehicle.new(FipeApi::Vehicle::CAR, "Car")
+    brand = vehicles.get_brands.find{|b| b.name == params[:brand] }
+    models = brand.get_models
+    render json: models
+  end
+
   private 
+
+  def set_car_brands
+
+    vehicles =  FipeApi::Vehicle.new(FipeApi::Vehicle::CAR, "Car")
+    @brands = vehicles.get_brands    
+
+    unless params[:id].nil?
+      filter_for_brand =  @car.brand ? @car.brand : @brands.first.name
+    else
+      filter_for_brand =  @brands.first.name
+    end 
+    
+    brand = vehicles.get_brands.find{|b| b.name == filter_for_brand }
+    @models = brand.get_models    
+  end
 
   def set_car
     @car = Car.find(params[:id])
