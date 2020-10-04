@@ -1,0 +1,21 @@
+pt-BR:
+  activerecord:
+    models:
+      user: Usuários
+      car: Carro
+    attributes:
+      car:
+        model: Modelo
+        board: Placa
+        brand: Marca
+        year_manufacture: Ano de Fabricação
+        model_year: Ano do Modelo
+        status: Status
+      user:
+        name: Nome
+        document: CPF
+        email: E-mail
+        phone: Telefone
+        role: Tipo
+        status: Status
+         

@@ -1,12 +1,5 @@
 <div class="sidemenu">
   <ul class="sideitem menu"> 
-    <li class="<%= 'active' if controller_name == 'schedule' %>">
-      <%= link_to admin_dashs_path, class: "loading" do %>
-      <i class="material-icons">insert_invitation</i>
-      <span>Agenda</span>
-      <% end %>
-    </li>
-
     <li class="<%= 'active' if controller_name == 'car' %>">
       <%= link_to admin_cars_path, class: "loading" do %>
       <i class="material-icons">directions_car</i>
@@ -19,13 +12,6 @@
       <i class="material-icons">supervised_user_circle</i>
       <span>Usuarios</span>
       <% end %>
-    </li>
-
-    <li class="<%= 'active' if controller_name == 'report' %>">
-      <%= link_to root_path, class: "loading" do %>
-      <i class="material-icons">equalizer</i>
-      <span>Relatorio</span>
-      <% end %>
-    </li>
+    </li>   
   </ul>
 </div>

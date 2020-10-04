@@ -17,7 +17,7 @@ class Admin::CarsController < AdminController
 
     respond_to do |format|
       if @car.save
-        format.html { redirect_to admin_cars_path, notice: 'car was successfully created.' }
+        format.html { redirect_to admin_cars_path, notice: 'Carro cadastrado com sucesso.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -29,7 +29,7 @@ class Admin::CarsController < AdminController
   def update
     respond_to do |format|
       if @car.update(car_params)
-        format.html { redirect_to admin_cars_path, notice: 'Car was successfully updated.' }
+        format.html { redirect_to admin_cars_path, notice: 'Carro atualizo com sucesso.' }
         format.json { render :show, status: :ok, location: @car }
       else
         format.html { render :edit }
@@ -41,7 +41,7 @@ class Admin::CarsController < AdminController
   def destroy   
     @car.destroy
     respond_to do |format|
-      format.html { redirect_to admin_cars_path, notice: 'Car was successfully destroyed.' }
+      format.html { redirect_to admin_cars_path, notice: 'Carro removido com sucesso.' }
       format.json { head :no_content }
     end
   end
