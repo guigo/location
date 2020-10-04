@@ -31,6 +31,8 @@ gem 'devise'
 gem 'kaminari'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+# This application is a ruby client to the Tabela Fipe Api - http://www.fipe.org.br/pt-br/indices/veiculos/. It makes use of the excellent http gem to make http requests and nokogiri to parse the response
+gem 'fipe_api'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

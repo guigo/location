@@ -1,4 +1,7 @@
 <% if current_user %>  
+  <div class="navbar-item user-name">
+    <%= current_user.name %>
+  </div>
   <div class="navbar-item">
     <figure class="avatar image is-64x64 is-marginless">
     <% if current_user.avatar.attached? %>   
@@ -7,9 +10,9 @@
       <%= image_tag('tmp/avatar.png', size: 64) %>
     <% end %>
     </figure>
-    </div>
+  </div> 
 
-    <div class="navbar-item has-dropdown is-hoverable user-menu">
+  <div class="navbar-item has-dropdown is-hoverable user-menu">
     <a class="navbar-link is-arrowless" href="/">
       <i class="material-icons">more_vert</i>
     </a>
@@ -28,14 +31,15 @@
         </a>
       </div>
       <div class="navbar-end">  
-      <div class="navbar-item">
-          <div class="buttons">
-            <a href="/cadastrar" class="button is-primary">
-            Cadastrar
-            </a>
-            <a href="/entrar" class="button">
-              Entrar
-            </a>
+        <div class="navbar-item">
+            <div class="buttons">
+              <a href="/cadastrar" class="button is-primary">
+              Cadastrar
+              </a>
+              <a href="/entrar" class="button">
+                Entrar
+              </a>
+            </div>
           </div>
         </div>
       </div>

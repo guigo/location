@@ -23,9 +23,12 @@
   <div class="card card-info">
     <div class="card-content">
       <div class="columns columns-data">
-
         <div class="column"> 
-         <div class="no-image"></div>        
+          <% if car.image.attached? %>                     
+            <%= image_tag(url_for(car.image), :class => "no-image") %>  
+          <% else %>           
+            <div class="no-image"></div>    
+          <% end %>               
           <div class="name">
             <h4>
               <%= car.model %><br />
@@ -35,7 +38,7 @@
         </div>  
 
         <div class="column is-hidden-tablet-only is-2-desktop truncate">
-          <span class="truncate is-flex">
+          <span class="is-flex">
             <i class="material-icons"></i> 
             <span>
               <%= car.model_year %> / <%= car.year_manufacture %>
@@ -44,13 +47,13 @@
         </div>  
 
         <div class="column is-hidden-tablet-only is-2-desktop truncate">
-          <span class="truncate is-flex">
+          <span class="is-flex">
             <i class="material-icons"></i> <span><%= car.board %></span>
           </span>
         </div>  
 
         <div class="column is-hidden-tablet-only is-2-desktop truncate">
-          <span class="truncate is-flex">
+          <span class=" is-flex">
             <i class="material-icons"></i> <span><%= car.model %></span>
           </span>
         </div>
