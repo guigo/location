@@ -34,27 +34,21 @@
     <h4>Dados Cadastrais</h4>
     <div class="columns">
       <div class="field column">
-        <%= form.label :model, class: 'label' %>
-        <div class="control">
-          <%= form.text_field :model, class: 'input', autocomplete: "off", required: true %>
-        </div>
-      </div>
-
-      <div class="field column">
         <%= form.label :brand, class: 'label' %>
         <div class="control">
           <%= form.text_field :brand, class: 'input', autocomplete: "off",required: true %>
         </div>
       </div>
+
+      <div class="field column">
+        <%= form.label :model, class: 'label' %>
+        <div class="control">
+          <%= form.text_field :model, class: 'input', autocomplete: "off", required: true %>
+        </div>
+      </div>   
     </div>
 
-    <div class="columns">
-      <div class="column is-three-fifths">
-        <%= form.label :board, class: 'label' %>
-        <div class="control">
-          <%= form.text_field :board, class: 'input', autocomplete: "off", required: true %>
-        </div>
-      </div>
+    <div class="columns">     
       <div class="column">
         <%= form.label :model_year, class: 'label' %>
         <div class="control has-icons-right">
@@ -71,6 +65,12 @@
           <span class="icon is-small is-right">
             <i class="material-icons">phone</i>
           </span>
+        </div>
+      </div>
+      <div class="column is-three-fifths">
+        <%= form.label :board, class: 'label' %>
+        <div class="control">
+          <%= form.text_field :board, class: 'input', autocomplete: "off", required: true %>
         </div>
       </div>
     </div>

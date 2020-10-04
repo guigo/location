@@ -20,7 +20,7 @@ class Admin::UsersController < AdminController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to admin_users_path, notice: 'User was successfully created.' }
+        format.html { redirect_to admin_users_path, notice: 'Usuário criado com sucesso.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -32,7 +32,7 @@ class Admin::UsersController < AdminController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to admin_users_path, notice: 'User was successfully updated.' }
+        format.html { redirect_to admin_users_path, notice: 'Usuário atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -44,7 +44,7 @@ class Admin::UsersController < AdminController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to admin_users_path, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to admin_users_path, notice: 'Usuário removido com sucesso.' }
       format.json { head :no_content }
     end
   end
