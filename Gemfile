@@ -27,7 +27,8 @@ gem 'jbuilder', '~> 2.7'
 
 # Devise is a flexible authentication solution for Rails based on Warden
 gem 'devise'
-
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for modern web app frameworks and ORMs
+gem 'kaminari'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -45,6 +46,8 @@ group :development, :test do
   gem 'shoulda-matchers'
   # A library for generating fake data such as names, addresses, and phone numbers.
   gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+  # Generates Brazilian CPF and CNPJ numbers for use in testing. Great to be used alongside Faker and won't clutter your namespace.
+  gem 'cpf_faker'
 end
 
 group :development do

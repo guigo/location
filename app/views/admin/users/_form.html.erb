@@ -1,27 +1,115 @@
-<%= form_with(model: user, local: true) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class="users">
+  <%= form_for([:admin, @user]) do |form| %>
+    <% if user.errors.any? %>
+      <% user.errors.full_messages.each do |message| %>
+        <div class="notification is-warning">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
 
-      <ul>
-        <% user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+    <div class="columns is-centered mb-2">
+      <div class="column is-half">       
+        <div class="avatar"> 
+          <label for='avatar' class="upload-avatar">
+            <i class="material-icons">camera_alt</i>
+          </label>
+          <%=form.file_field :avatar, id:"avatar" %>       
+          <% if user.avatar.attached? %>                     
+            <%= image_tag(url_for(user.avatar), :class => "avatar-preview") %>  
+          <% else %>           
+            <div class="avatar-preview"></div>             
+          <% end %>               
+        </div>           
+
+        <% unless @user.new_record? %>
+          <h4 class="name">
+            <%= @user.name %><br>
+            <small><%= t(@user.role) %></small>
+          </h4>
         <% end %>
-      </ul>
+      </div>
     </div>
+
+    <h4>Dados Cadastrais</h4>
+    <div class="columns">
+      <div class="field column is-half">
+        <%= form.label :name, class: 'label' %>
+        <div class="control">
+          <%= form.text_field :name, class: 'input', autocomplete: "off", required: true %>
+        </div>
+      </div>
+
+      <div class="field column">
+        <%= form.label :document, class: 'label' %>
+        <div class="control">
+          <%= form.text_field :document, class: 'input is-document', autocomplete: "off",required: true %>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="field column">
+        <%= form.label :email, class: 'label' %>
+        <div class="control">
+          <%= form.text_field :email, class: 'input', autocomplete: "off", required: true %>
+        </div>
+      </div>
+
+      <div class="field column">
+        <%= form.label :phone, class: 'label' %>
+        <div class="control has-icons-right">
+          <%= form.text_field :phone, class: 'input is-phone', autocomplete: "off" %>
+          <span class="icon is-small is-right">
+            <i class="material-icons">phone</i>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <h4>Dados Profissionais</h4>
+    <div class="columns">
+      <div class="field column is-narrow">
+        <%= form.label :role, class: 'label' %>
+        <div class="control">
+          <div class="switch-radio">
+            <% User.roles.each do |role, i| %>
+              <%= form.radio_button :role, role %>
+              <label for=<%= "user_role_#{role} "%>><%= t(role) %></label>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column is-narrow">
+        <div class="field">
+          <%= form.label :status, class: 'label' %>
+          <div class="control">
+            <div class="switch-radio">
+              <% User.statuses.each do |status, i| %>
+                <%= form.radio_button :status, status %>
+                <label for=<%= "user_status_#{status} "%>><%= t(status) %></label>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered mt-4">
+      <div class="field column is-half">
+        <div class="columns">
+          <div class="column">
+            <%= link_to 'Cancelar', :back, class: 'button is-primary is-outlined is-fullwidth' %>
+          </div>
+          <div class="column">
+            <%= form.submit 'Salvar', class: 'button is-primary is-fullwidth' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
   <% end %>
-
-  <div class="field">
-    <%= form.label :role %>
-    <%= form.number_field :role %>
-  </div>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

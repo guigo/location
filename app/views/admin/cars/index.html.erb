@@ -1,0 +1,67 @@
+<%= content_for(:page){ "Carros" } %>
+
+<%= content_for(:top_actions) do %>
+  <div class="navbar-item">
+    <div class="control has-icons-right is-search">
+      <input class="input reset" name="query" type="text" placeholder="Buscar Carro...">
+      <span class="icon is-small is-right">
+        <i class="material-icons">search</i>
+      </span>
+    </div>
+  </div>
+  <div class="navbar-item">
+    <%= link_to new_admin_car_path, class: 'button is-primary' do %>
+      <span class="icon">
+        <i class="material-icons">add_box</i>
+      </span>
+      <span>Adicionar Carro</span>
+    <% end %>
+  </div>
+<% end %>
+<br />
+<% @cars.each do |car| %>
+  <div class="card card-info">
+    <div class="card-content">
+      <div class="columns columns-data">
+
+        <div class="column"> 
+         <div class="no-image"></div>        
+          <div class="name">
+            <h4>
+              <%= car.model %><br />
+              <small><%= t(car.brand) %></small>
+            </h4>
+          </div>
+        </div>  
+
+        <div class="column is-hidden-tablet-only is-2-desktop truncate">
+          <span class="truncate is-flex">
+            <i class="material-icons"></i> 
+            <span>
+              <%= car.model_year %> / <%= car.year_manufacture %>
+            </span>
+          </span>
+        </div>  
+
+        <div class="column is-hidden-tablet-only is-2-desktop truncate">
+          <span class="truncate is-flex">
+            <i class="material-icons"></i> <span><%= car.board %></span>
+          </span>
+        </div>  
+
+        <div class="column is-hidden-tablet-only is-2-desktop truncate">
+          <span class="truncate is-flex">
+            <i class="material-icons"></i> <span><%= car.model %></span>
+          </span>
+        </div>
+
+        <div class="column is-one-quarter-tablet is-2-desktop">
+          <%= link_to 'Ver Carro', edit_admin_car_path(car), class: "button is-primary is-outlined is-fullwidth is-small" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= paginate @cars,  outer_window: 3  %>
+<%= page_entries_info @cars %>

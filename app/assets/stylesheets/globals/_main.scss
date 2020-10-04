@@ -7,6 +7,29 @@ hr {
   margin-bottom: 20px;
 }
 
+#dash{
+    margin-left: 88px;
+    a:not(.button) {
+      color: $primary;
+      font-size: 17px;
+    }
+  
+    p {
+      margin-bottom: 0;
+    }
+  
+    .yield {
+      .title {
+        font-family: "Montserrat", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 39px;
+      }
+    }
+  }
+
+
 #main {
   a:not(.button) {
     color: $primary;
@@ -24,6 +47,23 @@ hr {
       font-weight: 500;
       font-size: 32px;
       line-height: 39px;
+    }
+  }
+}
+
+.pageloader{
+  background: rgba(92, 143, 188, 0.6) !important;
+}
+
+.pagination{
+  ul {
+    list-style-type: none !important;
+    li > a {
+      background: rgb(92, 143, 188) !important;
+      color: #ffff !important;   
+    }
+    a:hover, a:focus{
+      background: none;
     }
   }
 }

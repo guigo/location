@@ -11,14 +11,10 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if current_user.admin? 
-      admin_dash_index_path      
+      admin_dashs_path     
     else      
       root_path
     end    
-  end
-
-  def after_sign_out_path_for(_resource_or_scope)
-    root_path
   end
 
   def user_not_authorized
