@@ -1,6 +1,6 @@
 ## :computer: Projeto
 
-Loca.ai- é uma plataforma simples para cadastro de veiculo para locação, 
+Loca.ai é uma plataforma simples para cadastro de veiculo para locação, 
 precisando apenas de nome, cpf, email e senha.
 
 Um projeto para o teste da Ao³, configurações e como funciona toda organização dos projetos.
@@ -36,19 +36,19 @@ Para executar o projeto local primeiramente, digite em seu terminal os comandos:
 *alterado as informações do arquivo database.yml conforme seu banco de dados*
 
 ```terminal
-rails db:create
+docker-compose build
 ````
 
 ```terminal
-rails db:migrate
+docker-compose run web rails db:setup
 ````
 
 ```terminal
-rails db:seed
+docker-compose run web rails db:seed
 ````
 
 ```terminal
-rails s
+docker-compose up
 ````
 
 ---
