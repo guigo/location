@@ -1,8 +1,8 @@
 <div align="center">
   <img alt="1" title="Tela carros" src=".github/locaai-admin-car-casdtro.png" width='350px'/>
-  <img alt="4" title="Tela Usuario" src=".github/locaai-admin-car-usuarios-2.png" width='3500px'/>
-   <img alt="4" title="Tela list de Usuario" src=".github/locaai-admin-car-usuariospng.png" width='3500px'/>
-    <img alt="4" title="Tela lista de carro" src=".github/locaai-admin.png" width='3500px'/>
+  <img alt="4" title="Tela Usuario" src=".github/locaai-admin-car-usuarios-2.png" width='350px'/>
+   <img alt="4" title="Tela list de Usuario" src=".github/locaai-admin-car-usuariospng.png" width='350px'/>
+    <img alt="4" title="Tela lista de carro" src=".github/locaai-admin.png" width='350px'/>
 </div>  
 
 
