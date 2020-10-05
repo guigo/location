@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CarsController, type: :controller do
+RSpec.describe Admin::CarsController, type: :controller do
 
   describe "GET #index" do
     it "returns http success" do
