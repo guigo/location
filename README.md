@@ -51,5 +51,21 @@ docker-compose run web rails db:seed
 docker-compose up
 ````
 
+## :point_down: Acessando o projeto
+
+```terminal
+email: admin@locaai.com.br
+senha: 123456
+````
+
+O sistema possui dois tipos de usuarios, admin e cliente:
+
+Cliente: Acessa apenas o layout do portal, e reserva de veiculos.
+Admin: Acessar o cadastro de veiculo e cadastro usuarios.
+
+Quando o cliente reservar um carro, e entrar no veiculo para efeturar uma nova reserva as datas da antiga solcitação está bloqueadar no datepicker.
+
+Obs: Se o usuario não estiver logado no sistema, será solicitado o login para que o mesmo possa efeturar a reserva. Após o login o usuario é redirecionado a tela do veiculo no qual deseja reservar.
+
 ---
 Feito com coração, café e muito esforço :heart: :rocket:
