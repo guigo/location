@@ -1,8 +1,12 @@
 <div align="center">
+  <img alt="4" title="home" src=".github/home.png" width='350px'/>
+  <img alt="4" title="cadastro" src=".github/cadastro.png" width='350px'/>
+  <img alt="4" title="login" src=".github/login.png" width='350px'/>
+  <img alt="4" title="login" src=".github/reserva-sem-login.png" width='350px'/>
+  <img alt="4" title="reserva com login" src=".github/reserva-com-login.png" width='350px'/>
   <img alt="1" title="Tela carros" src=".github/locaai-admin-car-casdtro.png" width='350px'/>
   <img alt="4" title="Tela Usuario" src=".github/locaai-admin-car-usuarios-2.png" width='350px'/>
-   <img alt="4" title="Tela list de Usuario" src=".github/locaai-admin-car-usuariospng.png" width='350px'/>
-    <img alt="4" title="Tela lista de carro" src=".github/locaai-admin.png" width='350px'/>
+   <img alt="4" title="Tela list de Usuario" src=".github/locaai-admin-car-usuariospng.png"idth='350px'/>
 </div>  
 
 
