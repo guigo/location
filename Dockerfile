@@ -1,12 +1,24 @@
 FROM ruby:2.7.0
 
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
-RUN mkdir /location
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
+    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
+    apt-get update && \
+    apt-get install -qq -y build-essential libpq-dev nodejs yarn
+
+RUN mkdir /build && mkdir /location
+WORKDIR /build
+
+ADD ./package.json /location/
+RUN yarn install
 
 WORKDIR /location
 
+ RUN cp -a /build/node_modules/ /location/
+
 COPY Gemfile /location/Gemfile
 COPY Gemfile.lock /location/Gemfile.lock
+
 
 RUN bundle install
 
