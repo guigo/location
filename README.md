@@ -11,7 +11,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [Rails](https://rubyonrails.org/)
 - [Ruby](https://www.ruby-lang.org/pt/)
-- [Postgres](hhttps://www.postgresql.org/)
+- [Postgres](https://www.postgresql.org/)
 - [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/)
 
 ## :point_down: Executando o projeto
@@ -47,8 +47,9 @@ rails db:migrate
 rails db:seed
 ````
 
-```s
-rails s````
+```terminal
+rails s
+````
 
 ---
 Feito com coração, café e muito esforço :heart: :rocket:
