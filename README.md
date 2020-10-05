@@ -13,6 +13,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Ruby](https://www.ruby-lang.org/pt/)
 - [Postgres](https://www.postgresql.org/)
 - [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/)
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
 ## :point_down: Executando o projeto
 
