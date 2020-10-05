@@ -18,4 +18,8 @@ pt-BR:
         phone: Telefone
         role: Tipo
         status: Status
+      reservecar:
+        document: CPF
+        start_at: Retirar
+        and_at: Devolução
          

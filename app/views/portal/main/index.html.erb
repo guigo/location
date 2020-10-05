@@ -28,7 +28,7 @@
             </div>
           </div>
           <footer class="card-footer">
-            <%= link_to portal_main_path(car.id), class: "card-footer-item" do %>
+            <%= link_to portal_reserved_car_path(car.id), class: "card-footer-item days_reserved", value: car.id do %>
               Verificar Disponibilidade
             <% end %>
           </footer>
