@@ -2,6 +2,8 @@ class User < ApplicationRecord
   enum status: { 'active' => 0, 'blocked' => 1 }
   enum role: { 'admin' => 0, 'regular' => 1 }
 
+  has_many :reserved_cars
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   

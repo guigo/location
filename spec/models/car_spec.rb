@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe Car, type: :model do
   let(:car){ FactoryBot.build(:car)}
 
+  it{ is_expected.to have_many(:reserved_cars) } 
+
   #verifica os campos orbigatorios a ser preenchidos
   it{ is_expected.to validate_presence_of :model}
   it{ is_expected.to validate_presence_of :brand}

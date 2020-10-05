@@ -1,8 +1,9 @@
 FactoryBot.define do
   factory :reserved_car do
-    car { "" }
-    document { "" }
-    start_at { "" }
-    and_at { "2020-10-04 12:08:06" }
+    car
+    document { Faker::CPF.pretty }
+    start_at { Faker::Date.in_date_period }
+    and_at { Faker::Date.in_date_period }
+    user
   end
 end
