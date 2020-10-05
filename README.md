@@ -69,5 +69,24 @@ Quando o cliente reservar um carro, e entrar no veiculo para efeturar uma nova r
 
 Obs: Se o usuario não estiver logado no sistema, será solicitado o login para que o mesmo possa efeturar a reserva. Após o login o usuario é redirecionado a tela do veiculo no qual deseja reservar.
 
+ Na consulta para o site da fipe, estou utilizando a gem [Fipe Api](https://github.com/caiofct/fipe_api)
+
+## :point_down: Executando os testes
+
+  Esta sendo utilizado as seguintes gem's para teste:
+
+- [RSpec](https://github.com/rspec/rspec-rails)
+- [Factory Bot](https://github.com/thoughtbot/factory_bot)
+- [Database Cleaner](https://github.com/DatabaseCleaner/database_cleaner)
+- [Shouda Matcher](https://github.com/thoughtbot/shoulda-matchers)
+- [Faker](https://github.com/faker-ruby/faker)
+
+
+```terminal
+bundle exec rspec spec/
+````
+
+Obs: esta senddo coberto nos teste, as rotas os modelo e relacionamento. Devido o tempo não consegui finalizar os teste de controller.
+
 ---
 Feito com coração, café e muito esforço :heart: :rocket:
