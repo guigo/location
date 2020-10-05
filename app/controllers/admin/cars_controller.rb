@@ -14,6 +14,15 @@ class Admin::CarsController < AdminController
     @car = Car.new
   end  
 
+  def get_car_models    
+    vehicles =  FipeApi::Vehicle.new(FipeApi::Vehicle::CAR, "Car")
+    brand = vehicles.get_brands.find{|b| b.name == params[:brand] }
+    models = brand.get_models
+    render json: models
+  end
+
+  private 
+
   def create
     @car = Car.new(car_params)
 
@@ -48,14 +57,6 @@ class Admin::CarsController < AdminController
     end
   end
 
-  def get_car_models    
-    vehicles =  FipeApi::Vehicle.new(FipeApi::Vehicle::CAR, "Car")
-    brand = vehicles.get_brands.find{|b| b.name == params[:brand] }
-    models = brand.get_models
-    render json: models
-  end
-
-  private 
 
   def set_car_brands
 
